@@ -3,6 +3,7 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const home = _Paths.home;
+  static const products = _Paths.products;
   static const login = _Paths.login;
 
   static String loginThen(String afterSuccessFullLogin) =>
@@ -12,6 +13,7 @@ abstract class Routes {
 
 abstract class _Paths {
   static const home = '/home';
+  static const products = '/products';
   static const login = '/login';
   static const admin = '/admin';
 }

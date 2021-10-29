@@ -6,6 +6,8 @@ import 'package:master_champions/app/modules/home/home_binding.dart';
 import 'package:master_champions/app/modules/home/home_view.dart';
 import 'package:master_champions/app/modules/login/login_binding.dart';
 import 'package:master_champions/app/modules/login/login_view.dart';
+import 'package:master_champions/app/modules/products/products_binding.dart';
+import 'package:master_champions/app/modules/products/products_view.dart';
 import 'package:master_champions/app/modules/root/root_binding.dart';
 import 'package:master_champions/app/modules/root/root_view.dart';
 
@@ -28,6 +30,11 @@ class AppPages {
               name: _Paths.home,
               page: () => HomePage(),
               binding: HomeBinding()),
+          GetPage(
+              preventDuplicates: true,
+              name: _Paths.products,
+              page: () => ProductsPage(),
+              binding: ProductsBinding()),
           GetPage(
               preventDuplicates: true,
               middlewares: [EnsureNotAuthMiddleware()],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:master_champions/utils/encrypt_helper.dart';
+import 'package:master_champions/app/core/utils/helpers/encrypt_helper.dart';
+
 
 class AuthService extends GetxService {
   static AuthService get to => Get.find();

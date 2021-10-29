@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:master_champions/app/routes/app_pages.dart';
@@ -12,49 +13,42 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final bool web = size.width > 800;
     return GetRouterOutlet.builder(builder: (context, delegate, current) {
       debugPrint('title ${current?.location}');
       return Scaffold(
           body: Column(
-            children: [
-              Container(
-                height: 70,
-                width: size.width,
-                padding:const EdgeInsets.symmetric(horizontal: 20),
-                decoration:const BoxDecoration(  color: Colors.white,boxShadow: [
+        children: [
+          Container(
+            width: size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            /*decoration:const BoxDecoration(  color: Colors.white,boxShadow: [
                   BoxShadow(
                       color: Colors.grey, offset: Offset(0, 1), blurRadius: 7)
-                ]),
-                child: Wrap(
-                  alignment: WrapAlignment.spaceBetween,
-                  runAlignment: WrapAlignment.spaceBetween,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        child: Image.asset(
-                          'assets/images/logo.png',
-                          height: 70,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                ]),*/
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              runAlignment: WrapAlignment.spaceAround,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      height: 100,
+                      //width: size.width*0.5,
+                      fit: BoxFit.cover,
                     ),
-                    IconButton(
-                        onPressed: () => null,
-                        icon: const Icon(
-                          Icons.person,
-                          color: Colors.blueAccent,
-                          size: 30,
-                        )),
-                  ],
+                    onTap: logic.goHome,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Expanded(child: GetRouterOutlet(initialRoute: Routes.home)),
-            ],
-          ));
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Expanded(child: GetRouterOutlet(initialRoute: Routes.home))
+        ],
+      ));
     });
   }
 }
